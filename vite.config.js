@@ -12,5 +12,9 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  build: {
+    outDir: "./docs",
+  },
+  publicPath: process.env.NODE_ENV === "production" ? "/rest-api-vue/" : "/",
 })
